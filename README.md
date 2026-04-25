@@ -8,13 +8,10 @@ This is my personal portfolio website created as part of my Web Development inte
 - About Me section
 - Projects showcase
 - Contact form
-
 ### 🛠️ Technologies Used
 - HTML
 - CSS
-
 ### 🔗 Live Demo
 (Add your deployed link here)
-
 ### 📂 GitHub Repository
 (Add repo link here)
