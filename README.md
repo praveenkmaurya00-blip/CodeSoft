@@ -1,20 +1,20 @@
-# codesoft
+# Codesoft
 
 
-# My Portfolio Website
+## My Portfolio Website
 This is my personal portfolio website created as part of my Web Development internship at CodeSoft. It showcases my skills, projects, and contact information.
-## 🚀 Features
+### 🚀 Features
 - Responsive design
 - About Me section
 - Projects showcase
 - Contact form
 
-## 🛠️ Technologies Used
+### 🛠️ Technologies Used
 - HTML
 - CSS
 
-## 🔗 Live Demo
+### 🔗 Live Demo
 (Add your deployed link here)
 
-## 📂 GitHub Repository
+### 📂 GitHub Repository
 (Add repo link here)
