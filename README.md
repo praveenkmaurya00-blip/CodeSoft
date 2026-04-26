@@ -14,10 +14,10 @@ This is my personal portfolio website created as part of my Web Development inte
 ## Fitness / Gym Landing Page
 Goal: Attract new members
 ### Sections:
-Hero: Motivational image + slogan
-Programs: Card layout (Yoga, Cardio, Strength)
-Trainers: Profile cards
-Schedule: Timetable section
-Membership Plans: Pricing table
-Contact: Location + form
+- Hero: Motivational image + slogan
+- Programs: Card layout (Yoga, Cardio, Strength)
+- Trainers: Profile cards
+- Schedule: Timetable section
+- Membership Plans: Pricing table
+- Contact: Location + form
 
