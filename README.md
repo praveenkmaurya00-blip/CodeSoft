@@ -22,7 +22,7 @@ Goal: Attract new members
 - Contact: Location + form
 
 # task 3 ---
-##Calculator
+## Calculator
 A basic calculator built using HTML, CSS, and JavaScript that performs standard arithmetic operations like addition, subtraction, multiplication, and division.
 - Features
 - ➕ Addition
