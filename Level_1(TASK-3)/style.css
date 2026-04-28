@@ -1,0 +1,273 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+  :root {
+    --bg: #0e0e10;
+    --surface: #18181c;
+    --panel: #1f1f25;
+    --border: #2e2e38;
+    --accent: #c8f135;
+    --accent-dim: #a8cc20;
+    --text-primary: #f0f0f0;
+    --text-secondary: #6b6b80;
+    --text-muted: #3a3a48;
+    --btn-num: #232329;
+    --btn-num-hover: #2d2d36;
+    --btn-op: #2a2a1a;
+    --btn-op-hover: #3a3a22;
+    --btn-clear: #2a1a1a;
+    --btn-clear-hover: #3d1f1f;
+    --shadow: 0 32px 80px rgba(0,0,0,0.6);
+    --radius: 20px;
+    --btn-radius: 14px;
+  }
+ 
+  body {
+    min-height: 100vh;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Mono', monospace;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 50% -20%, rgba(200,241,53,0.08) 0%, transparent 70%),
+      repeating-linear-gradient(0deg, transparent, transparent 39px, var(--text-muted) 39px, var(--text-muted) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, var(--text-muted) 39px, var(--text-muted) 40px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+  }
+ 
+  .calc-wrapper {
+    position: relative;
+  }
+ 
+  .calc-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-left: 4px;
+  }
+ 
+  .calculator {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    width: 320px;
+    box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.04);
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  .calculator::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 50%);
+    pointer-events: none;
+    border-radius: var(--radius);
+  }
+ 
+  /* Display */
+  .display {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 18px 16px;
+    margin-bottom: 18px;
+    min-height: 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  .display::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200,241,53,0.3), transparent);
+  }
+ 
+  .display-expression {
+    font-size: 12px;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+    min-height: 16px;
+    word-break: break-all;
+    text-align: right;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    direction: rtl;
+  }
+ 
+  .display-value {
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    transition: transform 0.1s ease, color 0.15s ease;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    direction: rtl;
+  }
+ 
+  .display-value.flash {
+    color: var(--accent);
+    transform: scale(1.02);
+  }
+ 
+  .display-value.error {
+    color: #ff6b6b;
+    font-size: 22px;
+  }
+ 
+  /* Buttons grid */
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+ 
+  button {
+    font-family: 'DM Mono', monospace;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid var(--border);
+    border-radius: var(--btn-radius);
+    height: 58px;
+    cursor: pointer;
+    transition: background 0.12s ease, transform 0.08s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    letter-spacing: 0.02em;
+  }
+ 
+  button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0);
+    transition: background 0.1s;
+    border-radius: inherit;
+  }
+ 
+  button:active::after {
+    background: rgba(255,255,255,0.06);
+  }
+ 
+  button:active {
+    transform: scale(0.94);
+  }
+ 
+  /* Number buttons */
+  .btn-num {
+    background: var(--btn-num);
+    color: var(--text-primary);
+  }
+ 
+  .btn-num:hover {
+    background: var(--btn-num-hover);
+    border-color: #3e3e4e;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  }
+ 
+  /* Operator buttons */
+  .btn-op {
+    background: var(--btn-op);
+    color: var(--accent);
+    border-color: rgba(200,241,53,0.15);
+    font-size: 20px;
+  }
+ 
+  .btn-op:hover {
+    background: var(--btn-op-hover);
+    border-color: rgba(200,241,53,0.35);
+    box-shadow: 0 4px 20px rgba(200,241,53,0.12);
+  }
+ 
+  /* Clear / backspace */
+  .btn-clear {
+    background: var(--btn-clear);
+    color: #ff8080;
+    border-color: rgba(255,100,100,0.12);
+  }
+ 
+  .btn-clear:hover {
+    background: var(--btn-clear-hover);
+    border-color: rgba(255,100,100,0.3);
+    box-shadow: 0 4px 20px rgba(255,80,80,0.1);
+  }
+ 
+  /* Equals */
+  .btn-equals {
+    background: var(--accent);
+    color: #0e0e10;
+    border-color: var(--accent);
+    font-size: 22px;
+    font-weight: 500;
+    box-shadow: 0 4px 24px rgba(200,241,53,0.25);
+  }
+ 
+  .btn-equals:hover {
+    background: var(--accent-dim);
+    border-color: var(--accent-dim);
+    box-shadow: 0 6px 30px rgba(200,241,53,0.4);
+  }
+ 
+  /* Zero spans 2 cols */
+  .btn-zero {
+    grid-column: span 2;
+    letter-spacing: 0.1em;
+  }
+ 
+  /* Backspace symbol */
+  .btn-back {
+    font-size: 18px;
+  }
+ 
+  /* Keyboard hint */
+  .hint {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+ 
+  .hint span {
+    color: var(--text-secondary);
+  }
+ 
+  /* Active operator indicator */
+  .op-indicator {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+ 
+  .op-indicator.active {
+    color: var(--accent);
+  }
+ 
+  @media (max-width: 400px) {
+    .calculator { width: 290px; padding: 16px; }
+    button { height: 52px; font-size: 15px; }
+    .display-value { font-size: 30px; }
+  }
