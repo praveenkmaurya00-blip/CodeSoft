@@ -21,12 +21,13 @@ Goal: Attract new members
 - Membership Plans: Pricing table
 - Contact: Location + form
 
-🔹Calculator
+# task 3 ---
+##Calculator
 A basic calculator built using HTML, CSS, and JavaScript that performs standard arithmetic operations like addition, subtraction, multiplication, and division.
-🚀 Features
-➕ Addition
-➖ Subtraction
-✖️ Multiplication
-➗ Division
-🧹 Clear button
-📱 Responsive design (if you made it)
+- Features
+-➕ Addition
+-➖ Subtraction
+-✖️ Multiplication
+-➗ Division
+-🧹 Clear button
+-📱 Responsive design (if you made it)
