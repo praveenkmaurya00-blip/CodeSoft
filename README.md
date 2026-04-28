@@ -25,9 +25,9 @@ Goal: Attract new members
 ##Calculator
 A basic calculator built using HTML, CSS, and JavaScript that performs standard arithmetic operations like addition, subtraction, multiplication, and division.
 - Features
--➕ Addition
--➖ Subtraction
--✖️ Multiplication
--➗ Division
--🧹 Clear button
--📱 Responsive design (if you made it)
+- ➕ Addition
+- ➖ Subtraction
+- ✖️ Multiplication
+- ➗ Division
+- 🧹 Clear button
+- 📱 Responsive design (if you made it)
